@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <h2>ParametriX</h2>
+  <div>
+    <a href="analytics.html">Analytics</a>
+    <a href="policy.html">Policy</a>
+    <a href="profile.html">Profile</a>
+    <a href="settings.html">Settings</a>
+    <a href="help.html">Help</a>
+    <a href="#" onclick="logout()">Logout</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h2>Dashboard</h2>
+
+  <div class="card" id="weather">Loading weather...</div>
+  <div class="card">Risk: <span id="risk">--</span></div>
+
+  <button class="btn" onclick="calculateRisk()">Calculate Risk</button>
+  <button class="btn" onclick="simulate()">Simulate Payout</button>
+
+  <h3>Payout History</h3>
+  <div id="history"></div>
+
+  <button class="btn" onclick="toggleTheme()">Toggle Theme</button>
+</div>
+
+<script src="script.js"></script>
+<script>
+checkAuth();
+getWeather();
+loadHistory();
+</script>
+
+</body>
+</html>
